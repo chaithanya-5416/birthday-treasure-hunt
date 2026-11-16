@@ -1,0 +1,479 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
+  background: linear-gradient(145deg, #e4f5ff, #f5e8ff, #fff0e8);
+  min-height: 100vh;
+  color: #41345e;
+  text-align: center;
+}
+
+.topbar {
+  background: #7455c8;
+  color: white;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.music-btn {
+  background: white;
+  color: #7455c8;
+  border: none;
+  border-radius: 20px;
+  padding: 7px 12px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#app {
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 12px;
+}
+
+.screen {
+  background: rgba(255,255,255,0.94);
+  border-radius: 28px;
+  padding: 30px 20px;
+  box-shadow: 0 12px 35px rgba(100,70,150,0.12);
+  animation: appear 0.4s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: clamp(28px, 7vw, 42px);
+  color: #7455c8;
+  margin: 10px 0;
+  line-height: 1.15;
+}
+
+h2 {
+  color: #7455c8;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 7px 0;
+}
+
+.tag {
+  display: inline-block;
+  background: #eee6ff;
+  color: #7455c8;
+  padding: 6px 15px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 10px;
+}
+
+.welcome-art {
+  font-size: 95px;
+  animation: float 2.5s infinite ease-in-out;
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px); }
+}
+
+.character {
+  font-size: 65px;
+  margin: 12px;
+}
+
+.guide {
+  color: #8b64bb;
+  font-style: italic;
+}
+
+.primary-btn, .secondary-btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 330px;
+  border: none;
+  border-radius: 18px;
+  padding: 15px;
+  margin: 18px auto 8px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.primary-btn {
+  color: white;
+  background: linear-gradient(120deg, #8661d9, #ec76ac);
+  box-shadow: 0 5px 15px #c9a6e7;
+}
+
+.secondary-btn {
+  background: #eee6ff;
+  color: #7455c8;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.small {
+  font-size: 13px;
+  color: #999;
+}
+
+.star-counter {
+  background: #fff4ce;
+  border-radius: 15px;
+  padding: 12px;
+  margin: 20px 0;
+  font-weight: 800;
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.level-card {
+  border: 2px solid #eee5ff;
+  background: #faf7ff;
+  border-radius: 18px;
+  padding: 17px 8px;
+  cursor: pointer;
+  font-family: inherit;
+  color: #514078;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.level-card .emoji {
+  font-size: 38px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.level-card.completed {
+  background: #e6ffec;
+  border-color: #8bd7a0;
+}
+
+.level-card.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.back-btn {
+  display: block;
+  background: #eee6ff;
+  color: #7455c8;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 15px;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.level-info {
+  display: flex;
+  justify-content: space-between;
+  background: #f5efff;
+  padding: 12px;
+  margin: 18px 0;
+  border-radius: 14px;
+  font-weight: 800;
+}
+
+.question {
+  font-size: 22px;
+  font-weight: 800;
+  color: #594287;
+  margin: 18px 0;
+}
+
+.answer-btn {
+  display: block;
+  width: 100%;
+  background: white;
+  border: 2px solid #e5d9ff;
+  border-radius: 14px;
+  padding: 13px;
+  margin: 10px 0;
+  font-size: 17px;
+  font-family: inherit;
+  color: #514078;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.answer-btn:active {
+  background: #eee6ff;
+}
+
+.feedback {
+  min-height: 30px;
+  font-weight: 800;
+  margin: 12px;
+}
+
+.hint {
+  color: #a16b30;
+  background: #fff4dc;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+.game-input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #d8c8ff;
+  border-radius: 13px;
+  font-size: 20px;
+  text-align: center;
+  font-family: inherit;
+  margin: 12px 0;
+  text-transform: uppercase;
+}
+
+.big-emoji {
+  font-size: 85px;
+  animation: float 2s infinite;
+}
+
+.reward {
+  font-size: 90px;
+  animation: float 1.5s infinite;
+}
+
+.treasure-art, .birthday-art {
+  font-size: 95px;
+  margin: 15px;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+  margin: 18px 0;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  border: 2px solid #d9c9ff;
+  background: #eee6ff;
+  border-radius: 13px;
+  font-size: 29px;
+  cursor: pointer;
+}
+
+.memory-card.matched {
+  background: #dcffe5;
+  border-color: #8bd7a0;
+}
+
+.hidden-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.hidden-item {
+  background: #fff1d9;
+  border-radius: 15px;
+  padding: 16px 4px;
+  font-size: 36px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.hidden-item.found {
+  background: #dfffe8;
+  border-color: #72cb8d;
+}
+
+.letter {
+  background: #fff0f6;
+  border: 2px dashed #eaa4c2;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.letter p {
+  font-size: 18px;
+}
+
+.confetti {
+  font-size: 35px;
+  margin: 12px;
+}
+
+.final-note {
+  color: #db659a;
+  font-weight: 800;
+  font-size: 21px;
+}
+
+footer {
+  padding: 15px;
+  color: #947cb5;
+  font-size: 14px;
+}
+
+@media(max-width: 380px) {
+  .screen {
+    padding: 23px 13px;
+  }
+
+  .memory-grid {
+    gap: 6px;
+  }
+
+  .memory-card {
+    font-size: 24px;
+  }
+
+  .level-card {
+    font-size: 13px;
+  }
+
+/* =====================================
+   BIRTHDAY TREASURE HUNT - IMPROVEMENTS
+   ===================================== */
+
+/* Better mobile spacing */
+#app {
+  width: 100%;
+}
+
+/* Mini-game buttons */
+#miniGameArea .answer-btn {
+  min-height: 52px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#miniGameArea .answer-btn:active {
+  background: #eee6ff;
+}
+
+/* Colour sequence buttons */
+#sequenceButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#sequenceButtons .answer-btn {
+  width: auto;
+  min-width: 90px;
+  margin: 0;
+}
+
+/* Input field */
+#miniAnswer {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  margin: 15px auto;
+}
+
+/* Disabled buttons */
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Mini-game star grid */
+#miniStarGrid {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+/* Success message */
+#successMessage {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Birthday video */
+#videoArea {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+#videoArea video {
+  display: block;
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  background: #222;
+}
+
+/* Birthday letter */
+#birthdayLetter {
+  white-space: pre-line;
+  line-height: 1.8;
+}
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+  .question {
+    font-size: 19px;
+  }
+
+  #sequenceButtons .answer-btn {
+    min-width: 75px;
+    padding: 10px;
+  }
+
+  .hidden-item {
+    padding: 13px 3px;
+    font-size: 30px;
+  }
+}
+
+}

@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7455c8">
+  <title>The Birthday Treasure Hunt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo">🏝️ Treasure Island</div>
+    <button id="musicBtn" class="music-btn" onclick="toggleMusic()">🔇 Sound</button>
+  </header>
+
+  <main id="app">
+
+    <!-- WELCOME SCREEN -->
+    <section id="welcomeScreen" class="screen">
+      <div class="welcome-art">🏝️</div>
+      <div class="tag">A SPECIAL BIRTHDAY MISSION</div>
+      <h1>The Lost Treasure!</h1>
+      <p class="subtitle">Hello, little explorer! 👋</p>
+      <p>A secret treasure is hidden on this island.</p>
+      <p>Play games, solve puzzles and collect 6 magic stars to find it!</p>
+      <div class="character">🐰</div>
+      <p class="guide">"Hi! I'm your adventure buddy!"</p>
+      <button class="primary-btn" onclick="startGame()">START MY ADVENTURE 🚀</button>
+      <p class="small">Are you ready? Let's go!</p>
+    </section>
+
+    <!-- MAP SCREEN -->
+    <section id="mapScreen" class="screen hidden">
+      <div class="tag">YOUR ADVENTURE MAP</div>
+      <h1>Explore the Island 🗺️</h1>
+      <p>Complete all 6 levels and collect the stars!</p>
+
+      <div class="star-counter">
+        ⭐ Stars collected: <span id="starCount">0</span>/6
+      </div>
+
+      <div id="levelGrid" class="level-grid"></div>
+
+      <button class="secondary-btn" onclick="resetGame()">
+        🔄 Start Again
+      </button>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="gameScreen" class="screen hidden">
+      <button class="back-btn" onclick="showMap()">← Map</button>
+
+      <div class="level-info">
+        <span id="levelNumber">LEVEL 1</span>
+        <span id="levelStars">⭐ 0/6</span>
+      </div>
+
+      <div id="gameContent"></div>
+    </section>
+
+    <!-- SUCCESS SCREEN -->
+    <section id="successScreen" class="screen hidden">
+      <div class="big-emoji">🎉</div>
+      <h1>YOU DID IT!</h1>
+      <p id="successMessage">You found a magic star!</p>
+      <div class="reward">⭐</div>
+      <button class="primary-btn" onclick="continueGame()">
+        CONTINUE ➜
+      </button>
+    </section>
+
+    <!-- FINAL TREASURE SCREEN -->
+    <section id="treasureScreen" class="screen hidden">
+      <div class="treasure-art">🎁✨</div>
+      <div class="tag">MISSION COMPLETE</div>
+      <h1>You Found the Treasure!</h1>
+      <p>You collected all 6 magic stars!</p>
+      <p>But wait... your real treasure is something special. ❤️</p>
+
+      <button class="primary-btn" onclick="openFinalGift()">
+        OPEN YOUR TREASURE 💝
+      </button>
+    </section>
+
+    <!-- FINAL BIRTHDAY SCREEN -->
+    <section id="finalScreen" class="screen hidden">
+      <div class="confetti">🎊🎂🎈🎉🎁</div>
+      <div class="tag">A MESSAGE JUST FOR YOU</div>
+      <h1>Happy Birthday! My Dear Aaradhya ❤️</h1>
+      <div class="birthday-art">🎂</div>
+
+      <div id="videoArea"></div>
+
+      <div class="letter">
+        <h2>A Little Message For You 💌</h2>
+        <p id="birthdayLetter"></p>
+        <h2>Lots of love! ❤️</h2>
+        <p>Your loving Akki 🥰</p>
+      </div>
+
+      <p class="final-note">You will always be my little star! ⭐</p>
+    </section>
+
+  </main>
+
+  <footer>
+    Made with ❤️ especially for you
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
